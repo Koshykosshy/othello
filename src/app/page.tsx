@@ -21,17 +21,6 @@ export default function Home() {
 
     if (board[y][x] !== 0) return;
 
-    const directions = [
-      [1, 0],
-      [1, -1],
-      [0, -1],
-      [-1, -1],
-      [-1, 0],
-      [-1, 1],
-      [0, 1],
-      [1, 1],
-    ];
-
     if (board[y + 1][x] !== undefined && board[y + 1][x] === 2 / turnColor) {
       if (board[y + 2][x] !== undefined && board[y + 2][x] === 2 / turnColor) {
         if (board[y + 3][x] !== undefined && board[y + 3][x] === 2 / turnColor) {
