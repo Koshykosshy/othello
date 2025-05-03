@@ -65,7 +65,6 @@ export default function Home() {
                   newBoard[y + 2][x] = turnColor;
                   newBoard[y + 1][x] = turnColor;
                   newBoard[y][x] = turnColor;
-                  setTurnColor(2 / turnColor);
                 } else {
                   //何もしない
                 }
@@ -76,7 +75,6 @@ export default function Home() {
                 newBoard[y + 2][x] = turnColor;
                 newBoard[y + 1][x] = turnColor;
                 newBoard[y][x] = turnColor;
-                setTurnColor(2 / turnColor);
               } else {
                 //何もしない
               }
@@ -86,7 +84,6 @@ export default function Home() {
               newBoard[y + 2][x] = turnColor;
               newBoard[y + 1][x] = turnColor;
               newBoard[y][x] = turnColor;
-              setTurnColor(2 / turnColor);
             } else {
               //何もしない
             }
@@ -95,7 +92,6 @@ export default function Home() {
             newBoard[y + 2][x] = turnColor;
             newBoard[y + 1][x] = turnColor;
             newBoard[y][x] = turnColor;
-            setTurnColor(2 / turnColor);
           } else {
             //何もしない
           }
@@ -103,14 +99,12 @@ export default function Home() {
           newBoard[y + 2][x] = turnColor;
           newBoard[y + 1][x] = turnColor;
           newBoard[y][x] = turnColor;
-          setTurnColor(2 / turnColor);
         } else {
           //何もしない
         }
       } else if (newBoard[y + 2][x] === turnColor) {
         newBoard[y + 1][x] = turnColor;
         newBoard[y][x] = turnColor;
-        setTurnColor(2 / turnColor);
       } else {
         //何もしない
       }
@@ -162,7 +156,6 @@ export default function Home() {
                   newBoard[y + 2][x - 2] = turnColor;
                   newBoard[y + 1][x - 1] = turnColor;
                   newBoard[y][x] = turnColor;
-                  setTurnColor(2 / turnColor);
                 } else {
                   //何もしない
                 }
@@ -173,7 +166,6 @@ export default function Home() {
                 newBoard[y + 2][x - 2] = turnColor;
                 newBoard[y + 1][x - 1] = turnColor;
                 newBoard[y][x] = turnColor;
-                setTurnColor(2 / turnColor);
               } else {
                 //何もしない
               }
@@ -183,7 +175,6 @@ export default function Home() {
               newBoard[y + 2][x - 2] = turnColor;
               newBoard[y + 1][x - 1] = turnColor;
               newBoard[y][x] = turnColor;
-              setTurnColor(2 / turnColor);
             } else {
               //何もしない
             }
@@ -192,7 +183,6 @@ export default function Home() {
             newBoard[y + 2][x - 2] = turnColor;
             newBoard[y + 1][x - 1] = turnColor;
             newBoard[y][x] = turnColor;
-            setTurnColor(2 / turnColor);
           } else {
             //何もしない
           }
@@ -200,14 +190,12 @@ export default function Home() {
           newBoard[y + 2][x - 2] = turnColor;
           newBoard[y + 1][x - 1] = turnColor;
           newBoard[y][x] = turnColor;
-          setTurnColor(2 / turnColor);
         } else {
           //何もしない
         }
       } else if (newBoard[y + 2][x - 2] === turnColor) {
         newBoard[y + 1][x - 1] = turnColor;
         newBoard[y][x] = turnColor;
-        setTurnColor(2 / turnColor);
       } else {
         //何もしない
       }
@@ -259,7 +247,6 @@ export default function Home() {
                   newBoard[y][x - 2] = turnColor;
                   newBoard[y][x - 1] = turnColor;
                   newBoard[y][x] = turnColor;
-                  setTurnColor(2 / turnColor);
                 } else {
                   //何もしない
                 }
@@ -270,7 +257,6 @@ export default function Home() {
                 newBoard[y][x - 2] = turnColor;
                 newBoard[y][x - 1] = turnColor;
                 newBoard[y][x] = turnColor;
-                setTurnColor(2 / turnColor);
               } else {
                 //何もしない
               }
@@ -280,7 +266,6 @@ export default function Home() {
               newBoard[y][x - 2] = turnColor;
               newBoard[y][x - 1] = turnColor;
               newBoard[y][x] = turnColor;
-              setTurnColor(2 / turnColor);
             } else {
               //何もしない
             }
@@ -289,7 +274,6 @@ export default function Home() {
             newBoard[y][x - 2] = turnColor;
             newBoard[y][x - 1] = turnColor;
             newBoard[y][x] = turnColor;
-            setTurnColor(2 / turnColor);
           } else {
             //何もしない
           }
@@ -297,14 +281,12 @@ export default function Home() {
           newBoard[y][x - 2] = turnColor;
           newBoard[y][x - 1] = turnColor;
           newBoard[y][x] = turnColor;
-          setTurnColor(2 / turnColor);
         } else {
           //何もしない
         }
       } else if (newBoard[y][x - 2] === turnColor) {
         newBoard[y][x - 1] = turnColor;
         newBoard[y][x] = turnColor;
-        setTurnColor(2 / turnColor);
       } else {
         //何もしない
       }
@@ -356,7 +338,6 @@ export default function Home() {
                   newBoard[y - 2][x - 2] = turnColor;
                   newBoard[y - 1][x - 1] = turnColor;
                   newBoard[y][x] = turnColor;
-                  setTurnColor(2 / turnColor);
                 } else {
                   //何もしない
                 }
@@ -367,7 +348,6 @@ export default function Home() {
                 newBoard[y - 2][x - 2] = turnColor;
                 newBoard[y - 1][x - 1] = turnColor;
                 newBoard[y][x] = turnColor;
-                setTurnColor(2 / turnColor);
               } else {
                 //何もしない
               }
@@ -377,7 +357,6 @@ export default function Home() {
               newBoard[y - 2][x - 2] = turnColor;
               newBoard[y - 1][x - 1] = turnColor;
               newBoard[y][x] = turnColor;
-              setTurnColor(2 / turnColor);
             } else {
               //何もしない
             }
@@ -386,7 +365,6 @@ export default function Home() {
             newBoard[y - 2][x - 2] = turnColor;
             newBoard[y - 1][x - 1] = turnColor;
             newBoard[y][x] = turnColor;
-            setTurnColor(2 / turnColor);
           } else {
             //何もしない
           }
@@ -394,14 +372,12 @@ export default function Home() {
           newBoard[y - 2][x - 2] = turnColor;
           newBoard[y - 1][x - 1] = turnColor;
           newBoard[y][x] = turnColor;
-          setTurnColor(2 / turnColor);
         } else {
           //何もしない
         }
       } else if (newBoard[y - 2][x - 2] === turnColor) {
         newBoard[y - 1][x - 1] = turnColor;
         newBoard[y][x] = turnColor;
-        setTurnColor(2 / turnColor);
       } else {
         //何もしない
       }
@@ -453,7 +429,6 @@ export default function Home() {
                   newBoard[y - 2][x] = turnColor;
                   newBoard[y - 1][x] = turnColor;
                   newBoard[y][x] = turnColor;
-                  setTurnColor(2 / turnColor);
                 } else {
                   //何もしない
                 }
@@ -464,7 +439,6 @@ export default function Home() {
                 newBoard[y - 2][x] = turnColor;
                 newBoard[y - 1][x] = turnColor;
                 newBoard[y][x] = turnColor;
-                setTurnColor(2 / turnColor);
               } else {
                 //何もしない
               }
@@ -474,7 +448,6 @@ export default function Home() {
               newBoard[y - 2][x] = turnColor;
               newBoard[y - 1][x] = turnColor;
               newBoard[y][x] = turnColor;
-              setTurnColor(2 / turnColor);
             } else {
               //何もしない
             }
@@ -483,7 +456,6 @@ export default function Home() {
             newBoard[y - 2][x] = turnColor;
             newBoard[y - 1][x] = turnColor;
             newBoard[y][x] = turnColor;
-            setTurnColor(2 / turnColor);
           } else {
             //何もしない
           }
@@ -491,14 +463,12 @@ export default function Home() {
           newBoard[y - 2][x] = turnColor;
           newBoard[y - 1][x] = turnColor;
           newBoard[y][x] = turnColor;
-          setTurnColor(2 / turnColor);
         } else {
           //何もしない
         }
       } else if (newBoard[y - 2][x] === turnColor) {
         newBoard[y - 1][x] = turnColor;
         newBoard[y][x] = turnColor;
-        setTurnColor(2 / turnColor);
       } else {
         //何もしない
       }
@@ -550,7 +520,6 @@ export default function Home() {
                   newBoard[y - 2][x + 2] = turnColor;
                   newBoard[y - 1][x + 1] = turnColor;
                   newBoard[y][x] = turnColor;
-                  setTurnColor(2 / turnColor);
                 } else {
                   //何もしない
                 }
@@ -561,7 +530,6 @@ export default function Home() {
                 newBoard[y - 2][x + 2] = turnColor;
                 newBoard[y - 1][x + 1] = turnColor;
                 newBoard[y][x] = turnColor;
-                setTurnColor(2 / turnColor);
               } else {
                 //何もしない
               }
@@ -571,7 +539,6 @@ export default function Home() {
               newBoard[y - 2][x + 2] = turnColor;
               newBoard[y - 1][x + 1] = turnColor;
               newBoard[y][x] = turnColor;
-              setTurnColor(2 / turnColor);
             } else {
               //何もしない
             }
@@ -580,7 +547,6 @@ export default function Home() {
             newBoard[y - 2][x + 2] = turnColor;
             newBoard[y - 1][x + 1] = turnColor;
             newBoard[y][x] = turnColor;
-            setTurnColor(2 / turnColor);
           } else {
             //何もしない
           }
@@ -588,14 +554,12 @@ export default function Home() {
           newBoard[y - 2][x + 2] = turnColor;
           newBoard[y - 1][x + 1] = turnColor;
           newBoard[y][x] = turnColor;
-          setTurnColor(2 / turnColor);
         } else {
           //何もしない
         }
       } else if (newBoard[y - 2][x + 2] === turnColor) {
         newBoard[y - 1][x + 1] = turnColor;
         newBoard[y][x] = turnColor;
-        setTurnColor(2 / turnColor);
       } else {
         //何もしない
       }
@@ -647,7 +611,6 @@ export default function Home() {
                   newBoard[y][x + 2] = turnColor;
                   newBoard[y][x + 1] = turnColor;
                   newBoard[y][x] = turnColor;
-                  setTurnColor(2 / turnColor);
                 } else {
                   //何もしない
                 }
@@ -658,7 +621,6 @@ export default function Home() {
                 newBoard[y][x + 2] = turnColor;
                 newBoard[y][x + 1] = turnColor;
                 newBoard[y][x] = turnColor;
-                setTurnColor(2 / turnColor);
               } else {
                 //何もしない
               }
@@ -668,7 +630,6 @@ export default function Home() {
               newBoard[y][x + 2] = turnColor;
               newBoard[y][x + 1] = turnColor;
               newBoard[y][x] = turnColor;
-              setTurnColor(2 / turnColor);
             } else {
               //何もしない
             }
@@ -677,7 +638,6 @@ export default function Home() {
             newBoard[y][x + 2] = turnColor;
             newBoard[y][x + 1] = turnColor;
             newBoard[y][x] = turnColor;
-            setTurnColor(2 / turnColor);
           } else {
             //何もしない
           }
@@ -685,14 +645,12 @@ export default function Home() {
           newBoard[y][x + 2] = turnColor;
           newBoard[y][x + 1] = turnColor;
           newBoard[y][x] = turnColor;
-          setTurnColor(2 / turnColor);
         } else {
           //何もしない
         }
       } else if (newBoard[y][x + 2] === turnColor) {
         newBoard[y][x + 1] = turnColor;
         newBoard[y][x] = turnColor;
-        setTurnColor(2 / turnColor);
       } else {
         //何もしない
       }
@@ -744,7 +702,6 @@ export default function Home() {
                   newBoard[y + 2][x + 2] = turnColor;
                   newBoard[y + 1][x + 1] = turnColor;
                   newBoard[y][x] = turnColor;
-                  setTurnColor(2 / turnColor);
                 } else {
                   //何もしない
                 }
@@ -755,7 +712,6 @@ export default function Home() {
                 newBoard[y + 2][x + 2] = turnColor;
                 newBoard[y + 1][x + 1] = turnColor;
                 newBoard[y][x] = turnColor;
-                setTurnColor(2 / turnColor);
               } else {
                 //何もしない
               }
@@ -765,7 +721,6 @@ export default function Home() {
               newBoard[y + 2][x + 2] = turnColor;
               newBoard[y + 1][x + 1] = turnColor;
               newBoard[y][x] = turnColor;
-              setTurnColor(2 / turnColor);
             } else {
               //何もしない
             }
@@ -774,7 +729,6 @@ export default function Home() {
             newBoard[y + 2][x + 2] = turnColor;
             newBoard[y + 1][x + 1] = turnColor;
             newBoard[y][x] = turnColor;
-            setTurnColor(2 / turnColor);
           } else {
             //何もしない
           }
@@ -782,19 +736,20 @@ export default function Home() {
           newBoard[y + 2][x + 2] = turnColor;
           newBoard[y + 1][x + 1] = turnColor;
           newBoard[y][x] = turnColor;
-          setTurnColor(2 / turnColor);
         } else {
           //何もしない
         }
       } else if (newBoard[y + 2][x + 2] === turnColor) {
         newBoard[y + 1][x + 1] = turnColor;
         newBoard[y][x] = turnColor;
-        setTurnColor(2 / turnColor);
       } else {
         //何もしない
       }
     } else {
       //何もしない
+    }
+    if (newBoard[y][x] === turnColor) {
+      setTurnColor(2 / turnColor);
     }
     setBoard(newBoard);
   };
