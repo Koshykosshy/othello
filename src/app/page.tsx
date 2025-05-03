@@ -21,13 +21,41 @@ export default function Home() {
 
     if (board[y][x] !== 0) return;
     //下
-    if (board[y + 1][x] !== undefined && board[y + 1][x] === 2 / turnColor) {
-      if (board[y + 2][x] !== undefined && board[y + 2][x] === 2 / turnColor) {
-        if (board[y + 3][x] !== undefined && board[y + 3][x] === 2 / turnColor) {
-          if (board[y + 4][x] !== undefined && board[y + 4][x] === 2 / turnColor) {
-            if (board[y + 5][x] !== undefined && board[y + 5][x] === 2 / turnColor) {
-              if (board[y + 6][x] !== undefined && board[y + 6][x] === 2 / turnColor) {
-                if (board[y + 7][x] !== undefined && board[y + 7][x] === 2 / turnColor) {
+    if (
+      board[y + 1] !== undefined &&
+      board[y + 1][x] !== undefined &&
+      board[y + 1][x] === 2 / turnColor
+    ) {
+      if (
+        board[y + 2] !== undefined &&
+        board[y + 2][x] !== undefined &&
+        board[y + 2][x] === 2 / turnColor
+      ) {
+        if (
+          board[y + 3] !== undefined &&
+          board[y + 3][x] !== undefined &&
+          board[y + 3][x] === 2 / turnColor
+        ) {
+          if (
+            board[y + 4] !== undefined &&
+            board[y + 4][x] !== undefined &&
+            board[y + 4][x] === 2 / turnColor
+          ) {
+            if (
+              board[y + 5] !== undefined &&
+              board[y + 5][x] !== undefined &&
+              board[y + 5][x] === 2 / turnColor
+            ) {
+              if (
+                board[y + 6] !== undefined &&
+                board[y + 6][x] !== undefined &&
+                board[y + 6][x] === 2 / turnColor
+              ) {
+                if (
+                  board[y + 7] !== undefined &&
+                  board[y + 7][x] !== undefined &&
+                  board[y + 7][x] === 2 / turnColor
+                ) {
                   //何もしない
                 } else if (board[y + 7][x] === turnColor) {
                   newBoard[y + 6][x] = turnColor;
@@ -86,16 +114,45 @@ export default function Home() {
       } else {
         //何もしない
       }
-      setBoard(newBoard);
+    } else {
+      //何もしない
     }
     //左下
-    if (board[y + 1][x - 1] !== undefined && board[y + 1][x - 1] === 2 / turnColor) {
-      if (board[y + 2][x - 2] !== undefined && board[y + 2][x - 2] === 2 / turnColor) {
-        if (board[y + 3][x - 3] !== undefined && board[y + 3][x - 3] === 2 / turnColor) {
-          if (board[y + 4][x - 4] !== undefined && board[y + 4][x - 4] === 2 / turnColor) {
-            if (board[y + 5][x - 5] !== undefined && board[y + 5][x - 5] === 2 / turnColor) {
-              if (board[y + 6][x - 6] !== undefined && board[y + 6][x - 6] === 2 / turnColor) {
-                if (board[y + 7][x - 7] !== undefined && board[y + 7][x - 7] === 2 / turnColor) {
+    if (
+      board[y + 1] !== undefined &&
+      board[y + 1][x - 1] !== undefined &&
+      board[y + 1][x - 1] === 2 / turnColor
+    ) {
+      if (
+        board[y + 2] !== undefined &&
+        board[y + 2][x - 2] !== undefined &&
+        board[y + 2][x - 2] === 2 / turnColor
+      ) {
+        if (
+          board[y + 3] !== undefined &&
+          board[y + 3][x - 3] !== undefined &&
+          board[y + 3][x - 3] === 2 / turnColor
+        ) {
+          if (
+            board[y + 4] !== undefined &&
+            board[y + 4][x - 4] !== undefined &&
+            board[y + 4][x - 4] === 2 / turnColor
+          ) {
+            if (
+              board[y + 5] !== undefined &&
+              board[y + 5][x - 5] !== undefined &&
+              board[y + 5][x - 5] === 2 / turnColor
+            ) {
+              if (
+                board[y + 6] !== undefined &&
+                board[y + 6][x - 6] !== undefined &&
+                board[y + 6][x - 6] === 2 / turnColor
+              ) {
+                if (
+                  board[y + 7] !== undefined &&
+                  board[y + 7][x - 7] !== undefined &&
+                  board[y + 7][x - 7] === 2 / turnColor
+                ) {
                   //何もしない
                 } else if (board[y + 7][x - 7] === turnColor) {
                   newBoard[y + 6][x - 6] = turnColor;
@@ -154,16 +211,45 @@ export default function Home() {
       } else {
         //何もしない
       }
-      setBoard(newBoard);
+    } else {
+      //何もしない
     }
     //左
-    if (board[y][x - 1] !== undefined && board[y][x - 1] === 2 / turnColor) {
-      if (board[y][x - 2] !== undefined && board[y][x - 2] === 2 / turnColor) {
-        if (board[y][x - 3] !== undefined && board[y][x - 3] === 2 / turnColor) {
-          if (board[y][x - 4] !== undefined && board[y][x - 4] === 2 / turnColor) {
-            if (board[y][x - 5] !== undefined && board[y][x - 5] === 2 / turnColor) {
-              if (board[y][x - 6] !== undefined && board[y][x - 6] === 2 / turnColor) {
-                if (board[y][x - 7] !== undefined && board[y][x - 7] === 2 / turnColor) {
+    if (
+      board[y] !== undefined &&
+      board[y][x - 1] !== undefined &&
+      board[y][x - 1] === 2 / turnColor
+    ) {
+      if (
+        board[y] !== undefined &&
+        board[y][x - 2] !== undefined &&
+        board[y][x - 2] === 2 / turnColor
+      ) {
+        if (
+          board[y] !== undefined &&
+          board[y][x - 3] !== undefined &&
+          board[y][x - 3] === 2 / turnColor
+        ) {
+          if (
+            board[y] !== undefined &&
+            board[y][x - 4] !== undefined &&
+            board[y][x - 4] === 2 / turnColor
+          ) {
+            if (
+              board[y] !== undefined &&
+              board[y][x - 5] !== undefined &&
+              board[y][x - 5] === 2 / turnColor
+            ) {
+              if (
+                board[y] !== undefined &&
+                board[y][x - 6] !== undefined &&
+                board[y][x - 6] === 2 / turnColor
+              ) {
+                if (
+                  board[y] !== undefined &&
+                  board[y][x - 7] !== undefined &&
+                  board[y][x - 7] === 2 / turnColor
+                ) {
                   //何もしない
                 } else if (board[y][x - 7] === turnColor) {
                   newBoard[y][x - 6] = turnColor;
@@ -222,16 +308,45 @@ export default function Home() {
       } else {
         //何もしない
       }
-      setBoard(newBoard);
+    } else {
+      //何もしない
     }
     //左上
-    if (board[y - 1][x - 1] !== undefined && board[y - 1][x - 1] === 2 / turnColor) {
-      if (board[y - 2][x - 2] !== undefined && board[y - 2][x - 2] === 2 / turnColor) {
-        if (board[y - 3][x - 3] !== undefined && board[y - 3][x - 3] === 2 / turnColor) {
-          if (board[y - 4][x - 4] !== undefined && board[y - 4][x - 4] === 2 / turnColor) {
-            if (board[y - 5][x - 5] !== undefined && board[y - 5][x - 5] === 2 / turnColor) {
-              if (board[y - 6][x - 6] !== undefined && board[y - 6][x - 6] === 2 / turnColor) {
-                if (board[y - 7][x - 7] !== undefined && board[y - 7][x - 7] === 2 / turnColor) {
+    if (
+      board[y - 1] !== undefined &&
+      board[y - 1][x - 1] !== undefined &&
+      board[y - 1][x - 1] === 2 / turnColor
+    ) {
+      if (
+        board[y - 2] !== undefined &&
+        board[y - 2][x - 2] !== undefined &&
+        board[y - 2][x - 2] === 2 / turnColor
+      ) {
+        if (
+          board[y - 3] !== undefined &&
+          board[y - 3][x - 3] !== undefined &&
+          board[y - 3][x - 3] === 2 / turnColor
+        ) {
+          if (
+            board[y - 4] !== undefined &&
+            board[y - 4][x - 4] !== undefined &&
+            board[y - 4][x - 4] === 2 / turnColor
+          ) {
+            if (
+              board[y - 5] !== undefined &&
+              board[y - 5][x - 5] !== undefined &&
+              board[y - 5][x - 5] === 2 / turnColor
+            ) {
+              if (
+                board[y - 6] !== undefined &&
+                board[y - 6][x - 6] !== undefined &&
+                board[y - 6][x - 6] === 2 / turnColor
+              ) {
+                if (
+                  board[y - 7] !== undefined &&
+                  board[y - 7][x - 7] !== undefined &&
+                  board[y - 7][x - 7] === 2 / turnColor
+                ) {
                   //何もしない
                 } else if (board[y - 7][x - 7] === turnColor) {
                   newBoard[y - 6][x - 6] = turnColor;
@@ -290,16 +405,45 @@ export default function Home() {
       } else {
         //何もしない
       }
-      setBoard(newBoard);
+    } else {
+      //何もしない
     }
     //上
-    if (board[y - 1][x] !== undefined && board[y - 1][x] === 2 / turnColor) {
-      if (board[y - 2][x] !== undefined && board[y - 2][x] === 2 / turnColor) {
-        if (board[y - 3][x] !== undefined && board[y - 3][x] === 2 / turnColor) {
-          if (board[y - 4][x] !== undefined && board[y - 4][x] === 2 / turnColor) {
-            if (board[y - 5][x] !== undefined && board[y - 5][x] === 2 / turnColor) {
-              if (board[y - 6][x] !== undefined && board[y - 6][x] === 2 / turnColor) {
-                if (board[y - 7][x] !== undefined && board[y - 7][x] === 2 / turnColor) {
+    if (
+      board[y - 1] !== undefined &&
+      board[y - 1][x] !== undefined &&
+      board[y - 1][x] === 2 / turnColor
+    ) {
+      if (
+        board[y - 2] !== undefined &&
+        board[y - 2][x] !== undefined &&
+        board[y - 2][x] === 2 / turnColor
+      ) {
+        if (
+          board[y - 3] !== undefined &&
+          board[y - 3][x] !== undefined &&
+          board[y - 3][x] === 2 / turnColor
+        ) {
+          if (
+            board[y - 4] !== undefined &&
+            board[y - 4][x] !== undefined &&
+            board[y - 4][x] === 2 / turnColor
+          ) {
+            if (
+              board[y - 5] !== undefined &&
+              board[y - 5][x] !== undefined &&
+              board[y - 5][x] === 2 / turnColor
+            ) {
+              if (
+                board[y - 6] !== undefined &&
+                board[y - 6][x] !== undefined &&
+                board[y - 6][x] === 2 / turnColor
+              ) {
+                if (
+                  board[y - 7] !== undefined &&
+                  board[y - 7][x] !== undefined &&
+                  board[y - 7][x] === 2 / turnColor
+                ) {
                   //何もしない
                 } else if (board[y - 7][x] === turnColor) {
                   newBoard[y - 6][x] = turnColor;
@@ -358,16 +502,45 @@ export default function Home() {
       } else {
         //何もしない
       }
-      setBoard(newBoard);
+    } else {
+      //何もしない
     }
     //右上
-    if (board[y - 1][x + 1] !== undefined && board[y - 1][x + 1] === 2 / turnColor) {
-      if (board[y - 2][x + 2] !== undefined && board[y - 2][x + 2] === 2 / turnColor) {
-        if (board[y - 3][x + 3] !== undefined && board[y - 3][x + 3] === 2 / turnColor) {
-          if (board[y - 4][x + 4] !== undefined && board[y - 4][x + 4] === 2 / turnColor) {
-            if (board[y - 5][x + 5] !== undefined && board[y - 5][x + 5] === 2 / turnColor) {
-              if (board[y - 6][x + 6] !== undefined && board[y - 6][x + 6] === 2 / turnColor) {
-                if (board[y - 7][x + 7] !== undefined && board[y - 7][x + 7] === 2 / turnColor) {
+    if (
+      board[y - 1] !== undefined &&
+      board[y - 1][x + 1] !== undefined &&
+      board[y - 1][x + 1] === 2 / turnColor
+    ) {
+      if (
+        board[y - 2] !== undefined &&
+        board[y - 2][x + 2] !== undefined &&
+        board[y - 2][x + 2] === 2 / turnColor
+      ) {
+        if (
+          board[y - 3] !== undefined &&
+          board[y - 3][x + 3] !== undefined &&
+          board[y - 3][x + 3] === 2 / turnColor
+        ) {
+          if (
+            board[y - 4] !== undefined &&
+            board[y - 4][x + 4] !== undefined &&
+            board[y - 4][x + 4] === 2 / turnColor
+          ) {
+            if (
+              board[y - 5] !== undefined &&
+              board[y - 5][x + 5] !== undefined &&
+              board[y - 5][x + 5] === 2 / turnColor
+            ) {
+              if (
+                board[y - 6] !== undefined &&
+                board[y - 6][x + 6] !== undefined &&
+                board[y - 6][x + 6] === 2 / turnColor
+              ) {
+                if (
+                  board[y - 7] !== undefined &&
+                  board[y - 7][x + 7] !== undefined &&
+                  board[y - 7][x + 7] === 2 / turnColor
+                ) {
                   //何もしない
                 } else if (board[y - 7][x + 7] === turnColor) {
                   newBoard[y - 6][x + 6] = turnColor;
@@ -426,16 +599,45 @@ export default function Home() {
       } else {
         //何もしない
       }
-      setBoard(newBoard);
+    } else {
+      //何もしない
     }
     //右
-    if (board[y][x + 1] !== undefined && board[y][x + 1] === 2 / turnColor) {
-      if (board[y][x + 2] !== undefined && board[y][x + 2] === 2 / turnColor) {
-        if (board[y][x + 3] !== undefined && board[y][x + 3] === 2 / turnColor) {
-          if (board[y][x + 4] !== undefined && board[y][x + 4] === 2 / turnColor) {
-            if (board[y][x + 5] !== undefined && board[y][x + 5] === 2 / turnColor) {
-              if (board[y][x + 6] !== undefined && board[y][x + 6] === 2 / turnColor) {
-                if (board[y][x + 7] !== undefined && board[y][x + 7] === 2 / turnColor) {
+    if (
+      board[y] !== undefined &&
+      board[y][x + 1] !== undefined &&
+      board[y][x + 1] === 2 / turnColor
+    ) {
+      if (
+        board[y] !== undefined &&
+        board[y][x + 2] !== undefined &&
+        board[y][x + 2] === 2 / turnColor
+      ) {
+        if (
+          board[y] !== undefined &&
+          board[y][x + 3] !== undefined &&
+          board[y][x + 3] === 2 / turnColor
+        ) {
+          if (
+            board[y] !== undefined &&
+            board[y][x + 4] !== undefined &&
+            board[y][x + 4] === 2 / turnColor
+          ) {
+            if (
+              board[y] !== undefined &&
+              board[y][x + 5] !== undefined &&
+              board[y][x + 5] === 2 / turnColor
+            ) {
+              if (
+                board[y] !== undefined &&
+                board[y][x + 6] !== undefined &&
+                board[y][x + 6] === 2 / turnColor
+              ) {
+                if (
+                  board[y] !== undefined &&
+                  board[y][x + 7] !== undefined &&
+                  board[y][x + 7] === 2 / turnColor
+                ) {
                   //何もしない
                 } else if (board[y][x + 7] === turnColor) {
                   newBoard[y][x + 6] = turnColor;
@@ -494,16 +696,45 @@ export default function Home() {
       } else {
         //何もしない
       }
-      setBoard(newBoard);
+    } else {
+      //何もしない
     }
     //右下
-    if (board[y + 1][x + 1] !== undefined && board[y + 1][x + 1] === 2 / turnColor) {
-      if (board[y + 2][x + 2] !== undefined && board[y + 2][x + 2] === 2 / turnColor) {
-        if (board[y + 3][x + 3] !== undefined && board[y + 3][x + 3] === 2 / turnColor) {
-          if (board[y + 4][x + 4] !== undefined && board[y + 4][x + 4] === 2 / turnColor) {
-            if (board[y + 5][x + 5] !== undefined && board[y + 5][x + 5] === 2 / turnColor) {
-              if (board[y + 6][x + 6] !== undefined && board[y + 6][x + 6] === 2 / turnColor) {
-                if (board[y + 7][x + 7] !== undefined && board[y + 7][x + 7] === 2 / turnColor) {
+    if (
+      board[y + 1] !== undefined &&
+      board[y + 1][x + 1] !== undefined &&
+      board[y + 1][x + 1] === 2 / turnColor
+    ) {
+      if (
+        board[y + 2] !== undefined &&
+        board[y + 2][x + 2] !== undefined &&
+        board[y + 2][x + 2] === 2 / turnColor
+      ) {
+        if (
+          board[y + 3] !== undefined &&
+          board[y + 3][x + 3] !== undefined &&
+          board[y + 3][x + 3] === 2 / turnColor
+        ) {
+          if (
+            board[y + 4] !== undefined &&
+            board[y + 4][x + 4] !== undefined &&
+            board[y + 4][x + 4] === 2 / turnColor
+          ) {
+            if (
+              board[y + 5] !== undefined &&
+              board[y + 5][x + 5] !== undefined &&
+              board[y + 5][x + 5] === 2 / turnColor
+            ) {
+              if (
+                board[y + 6] !== undefined &&
+                board[y + 6][x + 6] !== undefined &&
+                board[y + 6][x + 6] === 2 / turnColor
+              ) {
+                if (
+                  board[y + 7] !== undefined &&
+                  board[y + 7][x + 7] !== undefined &&
+                  board[y + 7][x + 7] === 2 / turnColor
+                ) {
                   //何もしない
                 } else if (board[y + 7][x + 7] === turnColor) {
                   newBoard[y + 6][x + 6] = turnColor;
@@ -562,8 +793,10 @@ export default function Home() {
       } else {
         //何もしない
       }
-      setBoard(newBoard);
+    } else {
+      //何もしない
     }
+    setBoard(newBoard);
   };
   return (
     <div className={styles.container}>
