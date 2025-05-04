@@ -69,7 +69,10 @@ export default function Home() {
                     board[y + 7 * dy][x + 7 * dx] === 2 / turnColor
                   ) {
                     //何もしない
-                  } else if (board[y + 7 * dy][x + 7 * dx] === turnColor) {
+                  } else if (
+                    board[y + 7 * dy] !== undefined &&
+                    board[y + 7 * dy][x + 7 * dx] === turnColor
+                  ) {
                     newBoard[y + 6 * dy][x + 6 * dx] = turnColor;
                     newBoard[y + 5 * dy][x + 5 * dx] = turnColor;
                     newBoard[y + 4 * dy][x + 4 * dx] = turnColor;
@@ -80,7 +83,10 @@ export default function Home() {
                   } else {
                     //何もしない
                   }
-                } else if (board[y + 6 * dy][x + 6 * dx] === turnColor) {
+                } else if (
+                  board[y + 6 * dy] !== undefined &&
+                  board[y + 6 * dy][x + 6 * dx] === turnColor
+                ) {
                   newBoard[y + 5 * dy][x + 5 * dx] = turnColor;
                   newBoard[y + 4 * dy][x + 4 * dx] = turnColor;
                   newBoard[y + 3 * dy][x + 3 * dx] = turnColor;
@@ -90,7 +96,10 @@ export default function Home() {
                 } else {
                   //何もしない
                 }
-              } else if (board[y + 5 * dy][x + 5 * dy] === turnColor) {
+              } else if (
+                board[y + 5 * dy] !== undefined &&
+                board[y + 5 * dy][x + 5 * dy] === turnColor
+              ) {
                 newBoard[y + 4 * dy][x + 4 * dx] = turnColor;
                 newBoard[y + 3 * dy][x + 3 * dx] = turnColor;
                 newBoard[y + 2 * dy][x + 2 * dx] = turnColor;
@@ -99,7 +108,10 @@ export default function Home() {
               } else {
                 //何もしない
               }
-            } else if (board[y + 4 * dy][x + 4 * dx] === turnColor) {
+            } else if (
+              board[y + 4 * dy] !== undefined &&
+              board[y + 4 * dy][x + 4 * dx] === turnColor
+            ) {
               newBoard[y + 3 * dy][x + 3 * dx] = turnColor;
               newBoard[y + 2 * dy][x + 2 * dx] = turnColor;
               newBoard[y + 1 * dy][x + 1 * dx] = turnColor;
@@ -107,14 +119,20 @@ export default function Home() {
             } else {
               //何もしない
             }
-          } else if (board[y + 3 * dy][x + 3 * dx] === turnColor) {
+          } else if (
+            board[y + 3 * dy] !== undefined &&
+            board[y + 3 * dy][x + 3 * dx] === turnColor
+          ) {
             newBoard[y + 2 * dy][x + 2 * dx] = turnColor;
             newBoard[y + 1 * dy][x + 1 * dx] = turnColor;
             newBoard[y][x] = turnColor;
           } else {
             //何もしない
           }
-        } else if (newBoard[y + 2 * dy][x + 2 * dx] === turnColor) {
+        } else if (
+          board[y + 2 * dy] !== undefined &&
+          newBoard[y + 2 * dy][x + 2 * dx] === turnColor
+        ) {
           newBoard[y + 1 * dy][x + 1 * dx] = turnColor;
           newBoard[y][x] = turnColor;
         } else {
