@@ -5,7 +5,7 @@ import styles from './page.module.css';
 
 export default function Home() {
   const [turnColor, setTurnColor] = useState(1);
-  const [board, setBoard] = useState([
+  const [board, setBoard] = useState<number[][]>([
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
@@ -15,744 +15,121 @@ export default function Home() {
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
   ]);
+
+  const directions = [
+    [-1, 0],
+    [-1, -1],
+    [0, -1],
+    [1, -1],
+    [1, 0],
+    [1, 1],
+    [0, 1],
+    [-1, 1],
+  ];
+
   const clickHandler = (x: number, y: number) => {
     console.log(x, y);
     const newBoard = structuredClone(board);
 
     if (board[y][x] !== 0) return;
-    //下
-    if (
-      board[y + 1] !== undefined &&
-      board[y + 1][x] !== undefined &&
-      board[y + 1][x] === 2 / turnColor
-    ) {
+    directions.forEach(([dx, dy]) => {
       if (
-        board[y + 2] !== undefined &&
-        board[y + 2][x] !== undefined &&
-        board[y + 2][x] === 2 / turnColor
+        board[y + dy] !== undefined &&
+        board[y + dy][x + dx] !== undefined &&
+        board[y + dy][x + dx] === 2 / turnColor
       ) {
         if (
-          board[y + 3] !== undefined &&
-          board[y + 3][x] !== undefined &&
-          board[y + 3][x] === 2 / turnColor
+          board[y + 2 * dy] !== undefined &&
+          board[y + 2 * dy][x + 2 * dx] !== undefined &&
+          board[y + 2 * dy][x + 2 * dx] === 2 / turnColor
         ) {
           if (
-            board[y + 4] !== undefined &&
-            board[y + 4][x] !== undefined &&
-            board[y + 4][x] === 2 / turnColor
+            board[y + 3 * dy] !== undefined &&
+            board[y + 3 * dy][x + 3 * dx] !== undefined &&
+            board[y + 3 * dy][x + 3 * dx] === 2 / turnColor
           ) {
             if (
-              board[y + 5] !== undefined &&
-              board[y + 5][x] !== undefined &&
-              board[y + 5][x] === 2 / turnColor
+              board[y + 4 * dy] !== undefined &&
+              board[y + 4 * dy][x + 4 * dx] !== undefined &&
+              board[y + 4 * dy][x + 4 * dx] === 2 / turnColor
             ) {
               if (
-                board[y + 6] !== undefined &&
-                board[y + 6][x] !== undefined &&
-                board[y + 6][x] === 2 / turnColor
+                board[y + 5 * dy] !== undefined &&
+                board[y + 5 * dy][x + 5 * dx] !== undefined &&
+                board[y + 5 * dy][x + 5 * dx] === 2 / turnColor
               ) {
                 if (
-                  board[y + 7] !== undefined &&
-                  board[y + 7][x] !== undefined &&
-                  board[y + 7][x] === 2 / turnColor
+                  board[y + 6 * dy] !== undefined &&
+                  board[y + 6 * dy][x + 6 * dx] !== undefined &&
+                  board[y + 6 * dy][x + 6 * dx] === 2 / turnColor
                 ) {
-                  //何もしない
-                } else if (board[y + 7][x] === turnColor) {
-                  newBoard[y + 6][x] = turnColor;
-                  newBoard[y + 5][x] = turnColor;
-                  newBoard[y + 4][x] = turnColor;
-                  newBoard[y + 3][x] = turnColor;
-                  newBoard[y + 2][x] = turnColor;
-                  newBoard[y + 1][x] = turnColor;
+                  if (
+                    board[y + 7 * dy] !== undefined &&
+                    board[y + 7 * dy][x + 7 * dx] !== undefined &&
+                    board[y + 7 * dy][x + 7 * dx] === 2 / turnColor
+                  ) {
+                    //何もしない
+                  } else if (board[y + 7 * dy][x + 7 * dx] === turnColor) {
+                    newBoard[y + 6 * dy][x + 6 * dx] = turnColor;
+                    newBoard[y + 5 * dy][x + 5 * dx] = turnColor;
+                    newBoard[y + 4 * dy][x + 4 * dx] = turnColor;
+                    newBoard[y + 3 * dy][x + 3 * dx] = turnColor;
+                    newBoard[y + 2 * dy][x + 2 * dx] = turnColor;
+                    newBoard[y + 1 * dy][x + 1 * dx] = turnColor;
+                    newBoard[y][x] = turnColor;
+                  } else {
+                    //何もしない
+                  }
+                } else if (board[y + 6 * dy][x + 6 * dx] === turnColor) {
+                  newBoard[y + 5 * dy][x + 5 * dx] = turnColor;
+                  newBoard[y + 4 * dy][x + 4 * dx] = turnColor;
+                  newBoard[y + 3 * dy][x + 3 * dx] = turnColor;
+                  newBoard[y + 2 * dy][x + 2 * dx] = turnColor;
+                  newBoard[y + 1 * dy][x + 2 * dx] = turnColor;
                   newBoard[y][x] = turnColor;
                 } else {
                   //何もしない
                 }
-              } else if (board[y + 6][x] === turnColor) {
-                newBoard[y + 5][x] = turnColor;
-                newBoard[y + 4][x] = turnColor;
-                newBoard[y + 3][x] = turnColor;
-                newBoard[y + 2][x] = turnColor;
-                newBoard[y + 1][x] = turnColor;
+              } else if (board[y + 5 * dy][x + 5 * dy] === turnColor) {
+                newBoard[y + 4 * dy][x + 4 * dx] = turnColor;
+                newBoard[y + 3 * dy][x + 3 * dx] = turnColor;
+                newBoard[y + 2 * dy][x + 2 * dx] = turnColor;
+                newBoard[y + 1 * dy][x + 1 * dx] = turnColor;
                 newBoard[y][x] = turnColor;
               } else {
                 //何もしない
               }
-            } else if (board[y + 5][x] === turnColor) {
-              newBoard[y + 4][x] = turnColor;
-              newBoard[y + 3][x] = turnColor;
-              newBoard[y + 2][x] = turnColor;
-              newBoard[y + 1][x] = turnColor;
+            } else if (board[y + 4 * dy][x + 4 * dx] === turnColor) {
+              newBoard[y + 3 * dy][x + 3 * dx] = turnColor;
+              newBoard[y + 2 * dy][x + 2 * dx] = turnColor;
+              newBoard[y + 1 * dy][x + 1 * dx] = turnColor;
               newBoard[y][x] = turnColor;
             } else {
               //何もしない
             }
-          } else if (board[y + 4][x] === turnColor) {
-            newBoard[y + 3][x] = turnColor;
-            newBoard[y + 2][x] = turnColor;
-            newBoard[y + 1][x] = turnColor;
+          } else if (board[y + 3 * dy][x + 3 * dx] === turnColor) {
+            newBoard[y + 2 * dy][x + 2 * dx] = turnColor;
+            newBoard[y + 1 * dy][x + 1 * dx] = turnColor;
             newBoard[y][x] = turnColor;
           } else {
             //何もしない
           }
-        } else if (board[y + 3][x] === turnColor) {
-          newBoard[y + 2][x] = turnColor;
-          newBoard[y + 1][x] = turnColor;
+        } else if (newBoard[y + 2 * dy][x + 2 * dx] === turnColor) {
+          newBoard[y + 1 * dy][x + 1 * dx] = turnColor;
           newBoard[y][x] = turnColor;
         } else {
           //何もしない
         }
-      } else if (newBoard[y + 2][x] === turnColor) {
-        newBoard[y + 1][x] = turnColor;
-        newBoard[y][x] = turnColor;
       } else {
         //何もしない
       }
-    } else {
-      //何もしない
-    }
-    //左下
-    if (
-      board[y + 1] !== undefined &&
-      board[y + 1][x - 1] !== undefined &&
-      board[y + 1][x - 1] === 2 / turnColor
-    ) {
-      if (
-        board[y + 2] !== undefined &&
-        board[y + 2][x - 2] !== undefined &&
-        board[y + 2][x - 2] === 2 / turnColor
-      ) {
-        if (
-          board[y + 3] !== undefined &&
-          board[y + 3][x - 3] !== undefined &&
-          board[y + 3][x - 3] === 2 / turnColor
-        ) {
-          if (
-            board[y + 4] !== undefined &&
-            board[y + 4][x - 4] !== undefined &&
-            board[y + 4][x - 4] === 2 / turnColor
-          ) {
-            if (
-              board[y + 5] !== undefined &&
-              board[y + 5][x - 5] !== undefined &&
-              board[y + 5][x - 5] === 2 / turnColor
-            ) {
-              if (
-                board[y + 6] !== undefined &&
-                board[y + 6][x - 6] !== undefined &&
-                board[y + 6][x - 6] === 2 / turnColor
-              ) {
-                if (
-                  board[y + 7] !== undefined &&
-                  board[y + 7][x - 7] !== undefined &&
-                  board[y + 7][x - 7] === 2 / turnColor
-                ) {
-                  //何もしない
-                } else if (board[y + 7][x - 7] === turnColor) {
-                  newBoard[y + 6][x - 6] = turnColor;
-                  newBoard[y + 5][x - 5] = turnColor;
-                  newBoard[y + 4][x - 4] = turnColor;
-                  newBoard[y + 3][x - 3] = turnColor;
-                  newBoard[y + 2][x - 2] = turnColor;
-                  newBoard[y + 1][x - 1] = turnColor;
-                  newBoard[y][x] = turnColor;
-                } else {
-                  //何もしない
-                }
-              } else if (board[y + 6][x - 6] === turnColor) {
-                newBoard[y + 5][x - 5] = turnColor;
-                newBoard[y + 4][x - 4] = turnColor;
-                newBoard[y + 3][x - 3] = turnColor;
-                newBoard[y + 2][x - 2] = turnColor;
-                newBoard[y + 1][x - 1] = turnColor;
-                newBoard[y][x] = turnColor;
-              } else {
-                //何もしない
-              }
-            } else if (board[y + 5][x - 5] === turnColor) {
-              newBoard[y + 4][x - 4] = turnColor;
-              newBoard[y + 3][x - 3] = turnColor;
-              newBoard[y + 2][x - 2] = turnColor;
-              newBoard[y + 1][x - 1] = turnColor;
-              newBoard[y][x] = turnColor;
-            } else {
-              //何もしない
-            }
-          } else if (board[y + 4][x - 4] === turnColor) {
-            newBoard[y + 3][x - 3] = turnColor;
-            newBoard[y + 2][x - 2] = turnColor;
-            newBoard[y + 1][x - 1] = turnColor;
-            newBoard[y][x] = turnColor;
-          } else {
-            //何もしない
-          }
-        } else if (board[y + 3][x - 3] === turnColor) {
-          newBoard[y + 2][x - 2] = turnColor;
-          newBoard[y + 1][x - 1] = turnColor;
-          newBoard[y][x] = turnColor;
-        } else {
-          //何もしない
-        }
-      } else if (newBoard[y + 2][x - 2] === turnColor) {
-        newBoard[y + 1][x - 1] = turnColor;
-        newBoard[y][x] = turnColor;
-      } else {
-        //何もしない
+      if (newBoard[y][x] === turnColor) {
+        setTurnColor(2 / turnColor);
       }
-    } else {
-      //何もしない
-    }
-    //左
-    if (
-      board[y] !== undefined &&
-      board[y][x - 1] !== undefined &&
-      board[y][x - 1] === 2 / turnColor
-    ) {
-      if (
-        board[y] !== undefined &&
-        board[y][x - 2] !== undefined &&
-        board[y][x - 2] === 2 / turnColor
-      ) {
-        if (
-          board[y] !== undefined &&
-          board[y][x - 3] !== undefined &&
-          board[y][x - 3] === 2 / turnColor
-        ) {
-          if (
-            board[y] !== undefined &&
-            board[y][x - 4] !== undefined &&
-            board[y][x - 4] === 2 / turnColor
-          ) {
-            if (
-              board[y] !== undefined &&
-              board[y][x - 5] !== undefined &&
-              board[y][x - 5] === 2 / turnColor
-            ) {
-              if (
-                board[y] !== undefined &&
-                board[y][x - 6] !== undefined &&
-                board[y][x - 6] === 2 / turnColor
-              ) {
-                if (
-                  board[y] !== undefined &&
-                  board[y][x - 7] !== undefined &&
-                  board[y][x - 7] === 2 / turnColor
-                ) {
-                  //何もしない
-                } else if (board[y][x - 7] === turnColor) {
-                  newBoard[y][x - 6] = turnColor;
-                  newBoard[y][x - 5] = turnColor;
-                  newBoard[y][x - 4] = turnColor;
-                  newBoard[y][x - 3] = turnColor;
-                  newBoard[y][x - 2] = turnColor;
-                  newBoard[y][x - 1] = turnColor;
-                  newBoard[y][x] = turnColor;
-                } else {
-                  //何もしない
-                }
-              } else if (board[y][x - 6] === turnColor) {
-                newBoard[y][x - 5] = turnColor;
-                newBoard[y][x - 4] = turnColor;
-                newBoard[y][x - 3] = turnColor;
-                newBoard[y][x - 2] = turnColor;
-                newBoard[y][x - 1] = turnColor;
-                newBoard[y][x] = turnColor;
-              } else {
-                //何もしない
-              }
-            } else if (board[y][x - 5] === turnColor) {
-              newBoard[y][x - 4] = turnColor;
-              newBoard[y][x - 3] = turnColor;
-              newBoard[y][x - 2] = turnColor;
-              newBoard[y][x - 1] = turnColor;
-              newBoard[y][x] = turnColor;
-            } else {
-              //何もしない
-            }
-          } else if (board[y][x - 4] === turnColor) {
-            newBoard[y][x - 3] = turnColor;
-            newBoard[y][x - 2] = turnColor;
-            newBoard[y][x - 1] = turnColor;
-            newBoard[y][x] = turnColor;
-          } else {
-            //何もしない
-          }
-        } else if (board[y][x - 3] === turnColor) {
-          newBoard[y][x - 2] = turnColor;
-          newBoard[y][x - 1] = turnColor;
-          newBoard[y][x] = turnColor;
-        } else {
-          //何もしない
-        }
-      } else if (newBoard[y][x - 2] === turnColor) {
-        newBoard[y][x - 1] = turnColor;
-        newBoard[y][x] = turnColor;
-      } else {
-        //何もしない
-      }
-    } else {
-      //何もしない
-    }
-    //左上
-    if (
-      board[y - 1] !== undefined &&
-      board[y - 1][x - 1] !== undefined &&
-      board[y - 1][x - 1] === 2 / turnColor
-    ) {
-      if (
-        board[y - 2] !== undefined &&
-        board[y - 2][x - 2] !== undefined &&
-        board[y - 2][x - 2] === 2 / turnColor
-      ) {
-        if (
-          board[y - 3] !== undefined &&
-          board[y - 3][x - 3] !== undefined &&
-          board[y - 3][x - 3] === 2 / turnColor
-        ) {
-          if (
-            board[y - 4] !== undefined &&
-            board[y - 4][x - 4] !== undefined &&
-            board[y - 4][x - 4] === 2 / turnColor
-          ) {
-            if (
-              board[y - 5] !== undefined &&
-              board[y - 5][x - 5] !== undefined &&
-              board[y - 5][x - 5] === 2 / turnColor
-            ) {
-              if (
-                board[y - 6] !== undefined &&
-                board[y - 6][x - 6] !== undefined &&
-                board[y - 6][x - 6] === 2 / turnColor
-              ) {
-                if (
-                  board[y - 7] !== undefined &&
-                  board[y - 7][x - 7] !== undefined &&
-                  board[y - 7][x - 7] === 2 / turnColor
-                ) {
-                  //何もしない
-                } else if (board[y - 7][x - 7] === turnColor) {
-                  newBoard[y - 6][x - 6] = turnColor;
-                  newBoard[y - 5][x - 5] = turnColor;
-                  newBoard[y - 4][x - 4] = turnColor;
-                  newBoard[y - 3][x - 3] = turnColor;
-                  newBoard[y - 2][x - 2] = turnColor;
-                  newBoard[y - 1][x - 1] = turnColor;
-                  newBoard[y][x] = turnColor;
-                } else {
-                  //何もしない
-                }
-              } else if (board[y - 6][x - 6] === turnColor) {
-                newBoard[y - 5][x - 5] = turnColor;
-                newBoard[y - 4][x - 4] = turnColor;
-                newBoard[y - 3][x - 3] = turnColor;
-                newBoard[y - 2][x - 2] = turnColor;
-                newBoard[y - 1][x - 1] = turnColor;
-                newBoard[y][x] = turnColor;
-              } else {
-                //何もしない
-              }
-            } else if (board[y - 5][x - 5] === turnColor) {
-              newBoard[y - 4][x - 4] = turnColor;
-              newBoard[y - 3][x - 3] = turnColor;
-              newBoard[y - 2][x - 2] = turnColor;
-              newBoard[y - 1][x - 1] = turnColor;
-              newBoard[y][x] = turnColor;
-            } else {
-              //何もしない
-            }
-          } else if (board[y - 4][x - 4] === turnColor) {
-            newBoard[y - 3][x - 3] = turnColor;
-            newBoard[y - 2][x - 2] = turnColor;
-            newBoard[y - 1][x - 1] = turnColor;
-            newBoard[y][x] = turnColor;
-          } else {
-            //何もしない
-          }
-        } else if (board[y - 3][x - 3] === turnColor) {
-          newBoard[y - 2][x - 2] = turnColor;
-          newBoard[y - 1][x - 1] = turnColor;
-          newBoard[y][x] = turnColor;
-        } else {
-          //何もしない
-        }
-      } else if (newBoard[y - 2][x - 2] === turnColor) {
-        newBoard[y - 1][x - 1] = turnColor;
-        newBoard[y][x] = turnColor;
-      } else {
-        //何もしない
-      }
-    } else {
-      //何もしない
-    }
-    //上
-    if (
-      board[y - 1] !== undefined &&
-      board[y - 1][x] !== undefined &&
-      board[y - 1][x] === 2 / turnColor
-    ) {
-      if (
-        board[y - 2] !== undefined &&
-        board[y - 2][x] !== undefined &&
-        board[y - 2][x] === 2 / turnColor
-      ) {
-        if (
-          board[y - 3] !== undefined &&
-          board[y - 3][x] !== undefined &&
-          board[y - 3][x] === 2 / turnColor
-        ) {
-          if (
-            board[y - 4] !== undefined &&
-            board[y - 4][x] !== undefined &&
-            board[y - 4][x] === 2 / turnColor
-          ) {
-            if (
-              board[y - 5] !== undefined &&
-              board[y - 5][x] !== undefined &&
-              board[y - 5][x] === 2 / turnColor
-            ) {
-              if (
-                board[y - 6] !== undefined &&
-                board[y - 6][x] !== undefined &&
-                board[y - 6][x] === 2 / turnColor
-              ) {
-                if (
-                  board[y - 7] !== undefined &&
-                  board[y - 7][x] !== undefined &&
-                  board[y - 7][x] === 2 / turnColor
-                ) {
-                  //何もしない
-                } else if (board[y - 7][x] === turnColor) {
-                  newBoard[y - 6][x] = turnColor;
-                  newBoard[y - 5][x] = turnColor;
-                  newBoard[y - 4][x] = turnColor;
-                  newBoard[y - 3][x] = turnColor;
-                  newBoard[y - 2][x] = turnColor;
-                  newBoard[y - 1][x] = turnColor;
-                  newBoard[y][x] = turnColor;
-                } else {
-                  //何もしない
-                }
-              } else if (board[y - 6][x] === turnColor) {
-                newBoard[y - 5][x] = turnColor;
-                newBoard[y - 4][x] = turnColor;
-                newBoard[y - 3][x] = turnColor;
-                newBoard[y - 2][x] = turnColor;
-                newBoard[y - 1][x] = turnColor;
-                newBoard[y][x] = turnColor;
-              } else {
-                //何もしない
-              }
-            } else if (board[y - 5][x] === turnColor) {
-              newBoard[y - 4][x] = turnColor;
-              newBoard[y - 3][x] = turnColor;
-              newBoard[y - 2][x] = turnColor;
-              newBoard[y - 1][x] = turnColor;
-              newBoard[y][x] = turnColor;
-            } else {
-              //何もしない
-            }
-          } else if (board[y - 4][x] === turnColor) {
-            newBoard[y - 3][x] = turnColor;
-            newBoard[y - 2][x] = turnColor;
-            newBoard[y - 1][x] = turnColor;
-            newBoard[y][x] = turnColor;
-          } else {
-            //何もしない
-          }
-        } else if (board[y - 3][x] === turnColor) {
-          newBoard[y - 2][x] = turnColor;
-          newBoard[y - 1][x] = turnColor;
-          newBoard[y][x] = turnColor;
-        } else {
-          //何もしない
-        }
-      } else if (newBoard[y - 2][x] === turnColor) {
-        newBoard[y - 1][x] = turnColor;
-        newBoard[y][x] = turnColor;
-      } else {
-        //何もしない
-      }
-    } else {
-      //何もしない
-    }
-    //右上
-    if (
-      board[y - 1] !== undefined &&
-      board[y - 1][x + 1] !== undefined &&
-      board[y - 1][x + 1] === 2 / turnColor
-    ) {
-      if (
-        board[y - 2] !== undefined &&
-        board[y - 2][x + 2] !== undefined &&
-        board[y - 2][x + 2] === 2 / turnColor
-      ) {
-        if (
-          board[y - 3] !== undefined &&
-          board[y - 3][x + 3] !== undefined &&
-          board[y - 3][x + 3] === 2 / turnColor
-        ) {
-          if (
-            board[y - 4] !== undefined &&
-            board[y - 4][x + 4] !== undefined &&
-            board[y - 4][x + 4] === 2 / turnColor
-          ) {
-            if (
-              board[y - 5] !== undefined &&
-              board[y - 5][x + 5] !== undefined &&
-              board[y - 5][x + 5] === 2 / turnColor
-            ) {
-              if (
-                board[y - 6] !== undefined &&
-                board[y - 6][x + 6] !== undefined &&
-                board[y - 6][x + 6] === 2 / turnColor
-              ) {
-                if (
-                  board[y - 7] !== undefined &&
-                  board[y - 7][x + 7] !== undefined &&
-                  board[y - 7][x + 7] === 2 / turnColor
-                ) {
-                  //何もしない
-                } else if (board[y - 7][x + 7] === turnColor) {
-                  newBoard[y - 6][x + 6] = turnColor;
-                  newBoard[y - 5][x + 5] = turnColor;
-                  newBoard[y - 4][x + 4] = turnColor;
-                  newBoard[y - 3][x + 3] = turnColor;
-                  newBoard[y - 2][x + 2] = turnColor;
-                  newBoard[y - 1][x + 1] = turnColor;
-                  newBoard[y][x] = turnColor;
-                } else {
-                  //何もしない
-                }
-              } else if (board[y - 6][x + 6] === turnColor) {
-                newBoard[y - 5][x + 5] = turnColor;
-                newBoard[y - 4][x + 4] = turnColor;
-                newBoard[y - 3][x + 3] = turnColor;
-                newBoard[y - 2][x + 2] = turnColor;
-                newBoard[y - 1][x + 1] = turnColor;
-                newBoard[y][x] = turnColor;
-              } else {
-                //何もしない
-              }
-            } else if (board[y - 5][x + 5] === turnColor) {
-              newBoard[y - 4][x + 4] = turnColor;
-              newBoard[y - 3][x + 3] = turnColor;
-              newBoard[y - 2][x + 2] = turnColor;
-              newBoard[y - 1][x + 1] = turnColor;
-              newBoard[y][x] = turnColor;
-            } else {
-              //何もしない
-            }
-          } else if (board[y - 4][x + 4] === turnColor) {
-            newBoard[y - 3][x + 3] = turnColor;
-            newBoard[y - 2][x + 2] = turnColor;
-            newBoard[y - 1][x + 1] = turnColor;
-            newBoard[y][x] = turnColor;
-          } else {
-            //何もしない
-          }
-        } else if (board[y - 3][x + 3] === turnColor) {
-          newBoard[y - 2][x + 2] = turnColor;
-          newBoard[y - 1][x + 1] = turnColor;
-          newBoard[y][x] = turnColor;
-        } else {
-          //何もしない
-        }
-      } else if (newBoard[y - 2][x + 2] === turnColor) {
-        newBoard[y - 1][x + 1] = turnColor;
-        newBoard[y][x] = turnColor;
-      } else {
-        //何もしない
-      }
-    } else {
-      //何もしない
-    }
-    //右
-    if (
-      board[y] !== undefined &&
-      board[y][x + 1] !== undefined &&
-      board[y][x + 1] === 2 / turnColor
-    ) {
-      if (
-        board[y] !== undefined &&
-        board[y][x + 2] !== undefined &&
-        board[y][x + 2] === 2 / turnColor
-      ) {
-        if (
-          board[y] !== undefined &&
-          board[y][x + 3] !== undefined &&
-          board[y][x + 3] === 2 / turnColor
-        ) {
-          if (
-            board[y] !== undefined &&
-            board[y][x + 4] !== undefined &&
-            board[y][x + 4] === 2 / turnColor
-          ) {
-            if (
-              board[y] !== undefined &&
-              board[y][x + 5] !== undefined &&
-              board[y][x + 5] === 2 / turnColor
-            ) {
-              if (
-                board[y] !== undefined &&
-                board[y][x + 6] !== undefined &&
-                board[y][x + 6] === 2 / turnColor
-              ) {
-                if (
-                  board[y] !== undefined &&
-                  board[y][x + 7] !== undefined &&
-                  board[y][x + 7] === 2 / turnColor
-                ) {
-                  //何もしない
-                } else if (board[y][x + 7] === turnColor) {
-                  newBoard[y][x + 6] = turnColor;
-                  newBoard[y][x + 5] = turnColor;
-                  newBoard[y][x + 4] = turnColor;
-                  newBoard[y][x + 3] = turnColor;
-                  newBoard[y][x + 2] = turnColor;
-                  newBoard[y][x + 1] = turnColor;
-                  newBoard[y][x] = turnColor;
-                } else {
-                  //何もしない
-                }
-              } else if (board[y][x + 6] === turnColor) {
-                newBoard[y][x + 5] = turnColor;
-                newBoard[y][x + 4] = turnColor;
-                newBoard[y][x + 3] = turnColor;
-                newBoard[y][x + 2] = turnColor;
-                newBoard[y][x + 1] = turnColor;
-                newBoard[y][x] = turnColor;
-              } else {
-                //何もしない
-              }
-            } else if (board[y][x + 5] === turnColor) {
-              newBoard[y][x + 4] = turnColor;
-              newBoard[y][x + 3] = turnColor;
-              newBoard[y][x + 2] = turnColor;
-              newBoard[y][x + 1] = turnColor;
-              newBoard[y][x] = turnColor;
-            } else {
-              //何もしない
-            }
-          } else if (board[y][x + 4] === turnColor) {
-            newBoard[y][x + 3] = turnColor;
-            newBoard[y][x + 2] = turnColor;
-            newBoard[y][x + 1] = turnColor;
-            newBoard[y][x] = turnColor;
-          } else {
-            //何もしない
-          }
-        } else if (board[y][x + 3] === turnColor) {
-          newBoard[y][x + 2] = turnColor;
-          newBoard[y][x + 1] = turnColor;
-          newBoard[y][x] = turnColor;
-        } else {
-          //何もしない
-        }
-      } else if (newBoard[y][x + 2] === turnColor) {
-        newBoard[y][x + 1] = turnColor;
-        newBoard[y][x] = turnColor;
-      } else {
-        //何もしない
-      }
-    } else {
-      //何もしない
-    }
-    //右下
-    if (
-      board[y + 1] !== undefined &&
-      board[y + 1][x + 1] !== undefined &&
-      board[y + 1][x + 1] === 2 / turnColor
-    ) {
-      if (
-        board[y + 2] !== undefined &&
-        board[y + 2][x + 2] !== undefined &&
-        board[y + 2][x + 2] === 2 / turnColor
-      ) {
-        if (
-          board[y + 3] !== undefined &&
-          board[y + 3][x + 3] !== undefined &&
-          board[y + 3][x + 3] === 2 / turnColor
-        ) {
-          if (
-            board[y + 4] !== undefined &&
-            board[y + 4][x + 4] !== undefined &&
-            board[y + 4][x + 4] === 2 / turnColor
-          ) {
-            if (
-              board[y + 5] !== undefined &&
-              board[y + 5][x + 5] !== undefined &&
-              board[y + 5][x + 5] === 2 / turnColor
-            ) {
-              if (
-                board[y + 6] !== undefined &&
-                board[y + 6][x + 6] !== undefined &&
-                board[y + 6][x + 6] === 2 / turnColor
-              ) {
-                if (
-                  board[y + 7] !== undefined &&
-                  board[y + 7][x + 7] !== undefined &&
-                  board[y + 7][x + 7] === 2 / turnColor
-                ) {
-                  //何もしない
-                } else if (board[y + 7][x + 7] === turnColor) {
-                  newBoard[y + 6][x + 6] = turnColor;
-                  newBoard[y + 5][x + 5] = turnColor;
-                  newBoard[y + 4][x + 4] = turnColor;
-                  newBoard[y + 3][x + 3] = turnColor;
-                  newBoard[y + 2][x + 2] = turnColor;
-                  newBoard[y + 1][x + 1] = turnColor;
-                  newBoard[y][x] = turnColor;
-                } else {
-                  //何もしない
-                }
-              } else if (board[y + 6][x + 6] === turnColor) {
-                newBoard[y + 5][x + 5] = turnColor;
-                newBoard[y + 4][x + 4] = turnColor;
-                newBoard[y + 3][x + 3] = turnColor;
-                newBoard[y + 2][x + 2] = turnColor;
-                newBoard[y + 1][x + 1] = turnColor;
-                newBoard[y][x] = turnColor;
-              } else {
-                //何もしない
-              }
-            } else if (board[y + 5][x + 5] === turnColor) {
-              newBoard[y + 4][x + 4] = turnColor;
-              newBoard[y + 3][x + 3] = turnColor;
-              newBoard[y + 2][x + 2] = turnColor;
-              newBoard[y + 1][x + 1] = turnColor;
-              newBoard[y][x] = turnColor;
-            } else {
-              //何もしない
-            }
-          } else if (board[y + 4][x + 4] === turnColor) {
-            newBoard[y + 3][x + 3] = turnColor;
-            newBoard[y + 2][x + 2] = turnColor;
-            newBoard[y + 1][x + 1] = turnColor;
-            newBoard[y][x] = turnColor;
-          } else {
-            //何もしない
-          }
-        } else if (board[y + 3][x + 3] === turnColor) {
-          newBoard[y + 2][x + 2] = turnColor;
-          newBoard[y + 1][x + 1] = turnColor;
-          newBoard[y][x] = turnColor;
-        } else {
-          //何もしない
-        }
-      } else if (newBoard[y + 2][x + 2] === turnColor) {
-        newBoard[y + 1][x + 1] = turnColor;
-        newBoard[y][x] = turnColor;
-      } else {
-        //何もしない
-      }
-    } else {
-      //何もしない
-    }
-    if (newBoard[y][x] === turnColor) {
-      setTurnColor(2 / turnColor);
-    }
+    });
     setBoard(newBoard);
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.board}>
