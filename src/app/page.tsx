@@ -148,8 +148,18 @@ export default function Home() {
     setBoard(newBoard);
   };
 
+  //点数
+  const cell = board.flat();
+  const b = cell.filter((cell) => cell === 1);
+  const w = cell.filter((cell) => cell === 2);
+
   return (
     <div className={styles.container}>
+      <div className={styles.scoreBoard}>
+        <div className={styles.scoreText}>
+          黒{b.length} : 白{w.length}
+        </div>
+      </div>
       <div className={styles.board}>
         {board.map((row, y) =>
           row.map((color, x) => (
