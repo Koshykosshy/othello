@@ -10,7 +10,7 @@ export default function Home() {
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 1, 2, 0, 0, 0],
-    [0, 0, 0, 2, 1, 0, 0, 0],
+    [0, 0, 0, 2, 1, 3, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
@@ -26,6 +26,107 @@ export default function Home() {
     [0, 1],
     [-1, 1],
   ];
+
+  //候補地
+  // const newBoard = structuredClone(board);
+  // for (let y = 0; y < 8; y++) {
+  //   for (let x = 0; x < 8; x++) {
+  //     if (board[y][x] === 0) {
+  //       directions.forEach(([dx, dy]) => {
+  //         if (
+  //           board[y + dy] !== undefined &&
+  //           board[y + dy][x + dx] !== undefined &&
+  //           board[y + dy][x + dx] === 2 / turnColor
+  //         ) {
+  //           if (
+  //             board[y + 2 * dy] !== undefined &&
+  //             board[y + 2 * dy][x + 2 * dx] !== undefined &&
+  //             board[y + 2 * dy][x + 2 * dx] === 2 / turnColor
+  //           ) {
+  //             if (
+  //               board[y + 3 * dy] !== undefined &&
+  //               board[y + 3 * dy][x + 3 * dx] !== undefined &&
+  //               board[y + 3 * dy][x + 3 * dx] === 2 / turnColor
+  //             ) {
+  //               if (
+  //                 board[y + 4 * dy] !== undefined &&
+  //                 board[y + 4 * dy][x + 4 * dx] !== undefined &&
+  //                 board[y + 4 * dy][x + 4 * dx] === 2 / turnColor
+  //               ) {
+  //                 if (
+  //                   board[y + 5 * dy] !== undefined &&
+  //                   board[y + 5 * dy][x + 5 * dx] !== undefined &&
+  //                   board[y + 5 * dy][x + 5 * dx] === 2 / turnColor
+  //                 ) {
+  //                   if (
+  //                     board[y + 6 * dy] !== undefined &&
+  //                     board[y + 6 * dy][x + 6 * dx] !== undefined &&
+  //                     board[y + 6 * dy][x + 6 * dx] === 2 / turnColor
+  //                   ) {
+  //                     if (
+  //                       board[y + 7 * dy] !== undefined &&
+  //                       board[y + 7 * dy][x + 7 * dx] !== undefined &&
+  //                       board[y + 7 * dy][x + 7 * dx] === 2 / turnColor
+  //                     ) {
+  //                       //何もしない
+  //                     } else if (
+  //                       board[y + 7 * dy] !== undefined &&
+  //                       board[y + 7 * dy][x + 7 * dx] === turnColor
+  //                     ) {
+  //                       newBoard[y][x] = 3;
+  //                     } else {
+  //                       //何もしない
+  //                     }
+  //                   } else if (
+  //                     board[y + 6 * dy] !== undefined &&
+  //                     board[y + 6 * dy][x + 6 * dx] === turnColor
+  //                   ) {
+  //                     newBoard[y][x] = 3;
+  //                   } else {
+  //                     //何もしない
+  //                   }
+  //                 } else if (
+  //                   board[y + 5 * dy] !== undefined &&
+  //                   board[y + 5 * dy][x + 5 * dx] === turnColor
+  //                 ) {
+  //                   newBoard[y][x] = 3;
+  //                 } else {
+  //                   //何もしない
+  //                 }
+  //               } else if (
+  //                 board[y + 4 * dy] !== undefined &&
+  //                 board[y + 4 * dy][x + 4 * dx] === turnColor
+  //               ) {
+  //                 newBoard[y][x] = 3;
+  //               } else {
+  //                 //何もしない
+  //               }
+  //             } else if (
+  //               board[y + 3 * dy] !== undefined &&
+  //               board[y + 3 * dy][x + 3 * dx] === turnColor
+  //             ) {
+  //               newBoard[y][x] = 3;
+  //             } else {
+  //               //何もしない
+  //             }
+  //           } else if (
+  //             board[y + 2 * dy] !== undefined &&
+  //             board[y + 2 * dy][x + 2 * dx] === turnColor
+  //           ) {
+  //             newBoard[y][x] = 3;
+  //           } else {
+  //             //何もしない
+  //           }
+  //         } else {
+  //           //何もしない
+  //         }
+  //       });
+  //     } else {
+  //       //何もしない
+  //     }
+  //   }
+  // }
+  // setBoard(newBoard);
 
   const clickHandler = (x: number, y: number) => {
     console.log(x, y);
@@ -98,7 +199,7 @@ export default function Home() {
                 }
               } else if (
                 board[y + 5 * dy] !== undefined &&
-                board[y + 5 * dy][x + 5 * dy] === turnColor
+                board[y + 5 * dy][x + 5 * dx] === turnColor
               ) {
                 newBoard[y + 4 * dy][x + 4 * dx] = turnColor;
                 newBoard[y + 3 * dy][x + 3 * dx] = turnColor;
@@ -163,7 +264,11 @@ export default function Home() {
       <div className={styles.board}>
         {board.map((row, y) =>
           row.map((color, x) => (
-            <div className={styles.cell} key={`${x}-${y}`} onClick={() => clickHandler(x, y)}>
+            <div
+              key={`${x}-${y}`}
+              className={`${styles.cell}${color === 3 ? styles.valid : ''}`}
+              onClick={() => clickHandler(x, y)}
+            >
               {color !== 0 && (
                 <div
                   className={styles.stone}
